@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#f9f9f9;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-dim": "#dadada",
+          "secondary-container": "#e3e2e2",
+          "tertiary-container": "#1a1c1c",
+          "on-primary-fixed": "#1c1b1b",
+          "primary-fixed": "#e5e2e1",
+          "on-secondary": "#ffffff",
+          "on-tertiary-container": "#838484",
+          "on-primary-container": "#858383",
+          "tertiary-fixed": "#e2e2e2",
+          "surface-container-low": "#f3f3f3",
+          "secondary-fixed": "#e3e2e2",
+          "surface-container-high": "#e8e8e8",
+          "primary-fixed-dim": "#c8c6c5",
+          "primary-container": "#1c1b1b",
+          "error-container": "#ffdad6",
+          "on-surface-variant": "#444748",
+          "on-primary-fixed-variant": "#474646",
+          "outline-variant": "#e5e7eb",
+          "on-tertiary-fixed": "#1a1c1c",
+          "inverse-surface": "#111111",
+          "surface-container-highest": "#e2e2e2",
+          "surface-container": "#eeeeee",
+          "primary": "#111111",
+          "background": "#f9f9f9",
+          "on-tertiary": "#ffffff",
+          "on-secondary-container": "#646464",
+          "secondary-fixed-dim": "#c7c6c6",
+          "tertiary": "#111111",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#1b1c1c",
+          "on-surface": "#111111",
+          "surface-tint": "#111111",
+          "tertiary-fixed-dim": "#c6c6c6",
+          "on-tertiary-fixed-variant": "#454747",
+          "secondary": "#5e5e5e",
+          "on-background": "#111111",
+          "outline": "#747878",
+          "on-error": "#ffffff",
+          "error": "#111111",
+          "on-error-container": "#111111",
+          "on-secondary-fixed-variant": "#464747",
+          "surface": "#f9f9f9",
+          "surface-bright": "#ffffff",
+          "inverse-primary": "#c8c6c5",
+          "surface-variant": "#e2e2e2",
+          "on-primary": "#ffffff",
+          "inverse-on-surface": "#f0f1f1"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        fontFamily: {
+          "body": ["Hanken Grotesk", "Plus Jakarta Sans", "sans-serif"],
+          "display": ["Space Grotesk", "Plus Jakarta Sans", "sans-serif"],
+          "mono": ["JetBrains Mono", "monospace"]
+        }
+      }
+    }
+  };</script></head><body class="bg-[#f9f9f9] font-body text-[#111111] flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-gray-200/80 pt-safe"><div class="h-14 px-4 flex items-center justify-between"><div class="flex items-center gap-2"><button aria-label="뒤로가기" class="w-10 h-10 -ml-2 flex items-center justify-center text-[#111111] rounded-full active:bg-gray-100 transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><img alt="모아 캐릭터 로고" class="w-7 h-7 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx-gT1unc0BdrnwaFungkfp4gEkmtK5uJQPxZ2rDTSos6aMX3HBDMBG7M-8X8O-sPb7r_4UWJri_vZoaEkWJPyJVDhXeHc9NWpY4f-w7gRgRhMHvsOMj1X7ESRY1mnTggtnKfJrprfI3AxGQhNVSs11fKwyZmQT6KnAku3jzHiDdm4faVCN43W1TOd-Tch-2KMfIH4hkl25ZUuKBozZAehFFY8AwDMn3YO7hQK8xn-5gduInpe-Wj_JfGy"/><h1 class="font-display font-bold text-[16px] text-[#111111] tracking-tight">식당 상세 적합도 분석</h1></div><div class="flex items-center gap-1"><div class="w-8 h-8 rounded-full bg-[#111111] text-white flex items-center justify-center font-display text-xs font-semibold"><span class="">M</span></div></div></div></header><main class="flex flex-col relative w-full pt-14 pb-safe bg-[#f9f9f9] min-h-screen"><div class="flex flex-col w-full pb-36">
+<!-- Top Visual Hero Block -->
+<div class="relative w-full px-4 pt-3">
+<div class="relative w-full h-64 rounded-xl overflow-hidden border border-gray-200/90 shadow-sm bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="An inviting warm-toned interior of an authentic modern Korean dining restaurant with natural wood tables, traditional paper screens, soft warm ambient lighting, and artfully prepared seasonal banchan plates in delicate ceramic tableware, shot in architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjXb4XoC87jQ01lMBCYoXvP8-4nrX28oSp9gIhCj7sm9OaF_VdkmVDSwk7ms_vScq4pbkf5HVG32X8TbVu9lYqNYVftj2y7dZnEEK-Y_ZCNHg1yUsHSebCJ93KA8dHgYgAB2FhABliC-u2gPJVJsqdVIumQc1IJT05YnwTCOGFAd5hLUixIrmzxDRXCSp_swnp2PRz-6H3evxgeDBugR5NCfRrak9RAngvg9PTpadYIaHxQj8bfLxuWg"/>
+<!-- Minimal Gradient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10"></div>
+<!-- Action Floating Chips on Hero -->
+<div class="absolute top-3 right-3 flex items-center gap-2">
+<button aria-label="공유하기" class="w-9 h-9 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center text-[#111111] shadow-sm active:scale-95 transition-transform border border-black/10" id="btn-share" onclick="triggerShareToast()">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+<button aria-label="북마크 저장" class="w-9 h-9 rounded-full bg-white/95 backdrop-blur-md flex items-center justify-center text-[#111111] shadow-sm active:scale-95 transition-transform border border-black/10" id="btn-bookmark" onclick="toggleBookmark(this)">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<!-- Hero Restaurant Identity Overprint -->
+<div class="absolute bottom-3.5 inset-x-3.5 text-white flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-black/90 text-white font-mono text-[10px] tracking-widest uppercase border border-white/20">정갈한 계절 한정식</span>
+<span class="text-[11px] text-gray-200 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[13px] text-white">near_me</span>
+            성수역 3번 출구 420m (도보 6분)
+          </span>
+</div>
+<h2 class="font-display text-[22px] font-bold tracking-tight text-white">소담 한정식 성수본점</h2>
+<div class="flex items-center gap-2 text-gray-300 text-[12px] font-medium">
+<div class="flex items-center gap-1 text-white">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-mono font-bold">4.6</span>
+</div>
+<span class="opacity-40">•</span>
+<span class="">카카오맵 방문자리뷰 482</span>
+<span class="opacity-40">•</span>
+<span class="">성동구 성수동2가</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Overall Match Banner (Delightful 29CM Minimal Score Card) -->
+<div class="px-4 mt-3">
+<div class="w-full bg-[#F8F7F3] rounded-3xl p-4 flex items-center justify-between shadow-xs"><div class="flex items-center gap-3.5"><div class="relative w-13 h-13 flex items-center justify-center"><svg class="w-13 h-13 -rotate-90" viewbox="0 0 48 48"><circle class="text-[#EAE6DF]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4"></circle><circle class="text-[#111111]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="7.5" stroke-linecap="round" stroke-width="4"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="font-mono text-[13px] font-bold text-[#111111]">94<span class="text-[9px] font-normal">%</span></span></div></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-display text-[15px] text-[#111111] font-bold">오늘의 적합도</span><span class="px-2 py-0.5 rounded-full bg-[#111111] text-white font-mono text-[10px] tracking-wider uppercase font-semibold">Best Fit</span></div><p class="text-[12px] text-gray-500 mt-0.5">요청하신 3인 부모님 외식 조건과 94% 일치해요</p></div></div><div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#111111] shadow-xs"><span class="material-symbols-outlined text-[18px]">verified</span></div></div>
+</div>
+<!-- Character Concierge Verdict Section with Chiikawa-style Mati -->
+<div class="px-4 mt-3">
+<div class="w-full bg-[#F8F7F3] rounded-3xl p-4 flex items-center justify-between shadow-xs"><div class="flex items-center gap-3.5"><div class="relative w-13 h-13 flex items-center justify-center"><svg class="w-13 h-13 -rotate-90" viewbox="0 0 48 48"><circle class="text-[#EAE6DF]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4"></circle><circle class="text-[#111111]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="7.5" stroke-linecap="round" stroke-width="4"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="font-mono text-[13px] font-bold text-[#111111]">94<span class="text-[9px] font-normal">%</span></span></div></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-display text-[15px] text-[#111111] font-bold">오늘의 적합도</span><span class="px-2 py-0.5 rounded-full bg-[#111111] text-white font-mono text-[10px] tracking-wider uppercase font-semibold">Best Fit</span></div><p class="text-[12px] text-gray-500 mt-0.5">요청하신 3인 부모님 외식 조건과 94% 일치해요</p></div></div><div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#111111] shadow-xs"><span class="material-symbols-outlined text-[18px]">verified</span></div></div>
+</div>
+<!-- Deep Condition Fit Matrix -->
+<div class="px-4 mt-5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-0.5">
+<div>
+<h3 class="font-display text-[16px] text-[#111111] font-bold tracking-tight">심층 조건 매칭 매트릭스</h3>
+<p class="text-[11px] text-gray-400 font-mono">실시간 공공 API • 영수증 리뷰 NLP 검증</p>
+</div>
+<button class="text-[12px] font-mono text-[#111111] underline underline-offset-4 flex items-center gap-0.5" onclick="toggleAllProvenance()">
+<span class="">근거 보기</span>
+<span class="material-symbols-outlined text-[16px]" id="provenance-toggle-icon">expand_more</span>
+</button>
+</div>
+<!-- Matrix Cards Container -->
+<div class="flex flex-col gap-2"><!-- Item 1: MUST 주차 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#111111] text-white font-mono text-[10px] font-bold tracking-wider flex items-center gap-0.5">MUST</span>
+<span class="text-[13px] font-bold text-[#111111]">주차 가능 여부</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#EAF3EA] text-[#2B6630] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">check</span> CONFIRMED
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">매장 뒤편 전용 주차장 8대 무료 주차 (확인됨)</p>
+<div class="provenance-detail hidden pt-2 mt-1 bg-white rounded-xl p-3 text-gray-600 text-[11px] flex flex-col gap-1 font-mono">
+<div class="flex items-center gap-1 text-[#111111] font-bold">
+<span class="material-symbols-outlined text-[13px]">fact_check</span>
+      검증 소스: 카카오맵 사업자 등록 정보 &amp; 현장 전화 확인 DB (10월 갱신)
+    </div>
+<p class="text-gray-500 font-sans">만차 시 인근 '성수 성락유수지 공영주차장' 도보 3분 안내 연계</p>
+</div>
+</div>
+<!-- Item 2: MUST 3인 한식 메뉴 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#111111] text-white font-mono text-[10px] font-bold tracking-wider flex items-center gap-0.5">MUST</span>
+<span class="text-[13px] font-bold text-[#111111]">3인 한식 메뉴 완비</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#EAF3EA] text-[#2B6630] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">check</span> CONFIRMED
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">연잎밥 떡갈비 정식, 보리굴비 반상 등 2~4인 세트 완비</p>
+<div class="provenance-detail hidden pt-2 mt-1 bg-white rounded-xl p-3 text-gray-600 text-[11px] flex flex-col gap-1 font-mono">
+<div class="flex items-center gap-1 text-[#111111] font-bold">
+<span class="material-symbols-outlined text-[13px]">menu_book</span>
+      검증 소스: 최신 등록 메뉴판 이미지 OCR 파싱 완료 (3인 식사 시 분할 주문 가능)
+    </div>
+</div>
+</div>
+<!-- Item 3: PREFER 부모님 동행 친화도 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#EBE9E4] text-[#111111] font-mono text-[10px] font-bold tracking-wider">PREFER</span>
+<span class="text-[13px] font-bold text-[#111111]">부모님 동행 편의성</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#F1EEF8] text-[#553C9A] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">psychology</span> INFERRED
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">어르신 선호 계절 찬 구성, 편안한 등받이 원목 좌석 및 좌식 없음</p>
+<div class="provenance-detail hidden pt-2 mt-1 bg-white rounded-xl p-3 text-gray-600 text-[11px] flex flex-col gap-1 font-mono">
+<div class="flex items-center gap-1 text-[#111111] font-bold">
+<span class="material-symbols-outlined text-[13px]">insights</span>
+      검증 소스: 방문객 연령 분석 상위 35%가 50~60대 가족 단위 방문
+    </div>
+</div>
+</div>
+<!-- Item 4: PREFER 소음 수준 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#EBE9E4] text-[#111111] font-mono text-[10px] font-bold tracking-wider">PREFER</span>
+<span class="text-[13px] font-bold text-[#111111]">대화 적합 소음 수준</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#EBF3F8] text-[#2C5282] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">volume_down</span> LIKELY
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">리뷰 120건 중 ‘부모님과 대화하기 좋다’ 키워드 84% 검출</p>
+<div class="provenance-detail hidden pt-2 mt-1 bg-white rounded-xl p-3 text-gray-600 text-[11px] flex flex-col gap-1 font-mono">
+<div class="flex items-center gap-1 text-[#111111] font-bold">
+<span class="material-symbols-outlined text-[13px]">forum</span>
+      감성 분석: 테이블 간격 1.4m 이상 확보로 쾌적한 데시벨(평균 55dB) 유지
+    </div>
+</div>
+</div>
+<!-- Item 5: AVOID 자극적/매운 맛 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#E2DFD8] text-[#111111] font-mono text-[10px] font-bold tracking-wider">AVOID</span>
+<span class="text-[13px] font-bold text-[#111111]">자극적 / 매운 양념 배제</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#EAF3EA] text-[#2B6630] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">check</span> CONFIRMED
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">저염 백김치, 들깨 버섯탕 등 천연 조미료 중심의 순한 상차림</p>
+</div>
+<!-- Item 6: UNKNOWN 당일 실시간 룸 여부 -->
+<div class="bg-[#F7F6F2] rounded-2xl p-4 flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-[#EBE9E4] text-gray-600 font-mono text-[10px] font-bold tracking-wider">UNKNOWN</span>
+<span class="text-[13px] font-bold text-[#111111]">당일 실시간 룸 잔여 여부</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-[#FDF0EC] text-[#C05621] font-mono text-[10px] font-semibold flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[12px]">help_outline</span> 확인 필요
+    </span>
+</div>
+<p class="text-[13px] text-gray-700">현재 독립 룸 잔여 여부는 API 미제공 상태입니다. 방문 전 매장 전화 확인을 권장합니다.</p>
+<div class="pt-1">
+<a class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#EFECE5] text-[#111111] text-[11px] font-mono active:bg-gray-200 transition-colors" href="tel:02-468-1234">
+<span class="material-symbols-outlined text-[15px]">call</span> 매장에 바로 룸 잔여 문의하기 (02-468-1234)
+    </a>
+</div>
+</div></div>
+</div>
+<!-- Trade-off & Consideration (29CM Minimal Editorial Caution Card) -->
+<div class="px-4 mt-3">
+<div class="w-full bg-[#F8F7F3] rounded-3xl p-4 flex items-center justify-between shadow-xs"><div class="flex items-center gap-3.5"><div class="relative w-13 h-13 flex items-center justify-center"><svg class="w-13 h-13 -rotate-90" viewbox="0 0 48 48"><circle class="text-[#EAE6DF]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-width="4"></circle><circle class="text-[#111111]" cx="24" cy="24" fill="none" r="20" stroke="currentColor" stroke-dasharray="125.6" stroke-dashoffset="7.5" stroke-linecap="round" stroke-width="4"></circle></svg><div class="absolute inset-0 flex flex-col items-center justify-center"><span class="font-mono text-[13px] font-bold text-[#111111]">94<span class="text-[9px] font-normal">%</span></span></div></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-display text-[15px] text-[#111111] font-bold">오늘의 적합도</span><span class="px-2 py-0.5 rounded-full bg-[#111111] text-white font-mono text-[10px] tracking-wider uppercase font-semibold">Best Fit</span></div><p class="text-[12px] text-gray-500 mt-0.5">요청하신 3인 부모님 외식 조건과 94% 일치해요</p></div></div><div class="w-8 h-8 rounded-full bg-white flex items-center justify-center text-[#111111] shadow-xs"><span class="material-symbols-outlined text-[18px]">verified</span></div></div>
+</div>
+<!-- Visual Menu Recommendation Grid -->
+<div class="px-4 mt-5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-0.5">
+<h3 class="font-display text-[16px] text-[#111111] font-bold tracking-tight">추천 대표 상차림</h3>
+<span class="font-mono text-[11px] text-gray-400">부모님 만족도 1위</span>
+</div>
+<div class="grid grid-cols-2 gap-3"><!-- Dish 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-28 w-full relative bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Traditional handmade Korean beef tteokgalbi served on a heated sizzling stone plate with fresh scallions, warm soft lighting, macro appetizing close-up food photo." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMfi4Gb2Ugbx6jNJQHwCnEn9ty2OkfLTnCF5UVfjLCVKAmqB3j38bA9LDxfLBYiSqpjhCt6xdQLD8cXyZUehOhwUeJ6bmvAdAA-GF-w-PT5cR1J80txL6EZ3fttcwjuyTfHalm4_wK8-5bdTgYobNf7IXB6iPgohhcfEwQKzU8RB-XwMgdFKX-Gaf-qcALB_4TBWfK0YIUXk7eBFrr1-K7JxOGTbiTUyiWZArXJmCsXfAjjoZYJrmQoQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-black/85 text-white font-mono text-[9px] uppercase tracking-wide">시그니처</span>
+</div>
+<div class="p-3 flex flex-col">
+<span class="text-[13px] font-bold text-[#111111] truncate">수제 연잎 떡갈비 정식</span>
+<span class="font-mono text-[13px] text-[#111111] font-bold mt-1">28,000원 <span class="text-gray-400 font-normal text-[10px]">/ 1인</span></span>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm flex flex-col">
+<div class="h-28 w-full relative bg-gray-100">
+<img class="w-full h-full object-cover" data-alt="Steamed Korean barley dried yellow corvina boribulbi with green tea water and seasonal side dishes, arranged in luxury brass ware, top-down culinary food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXOU349hvkLSYRY_gsKtkTz9vzP8GBftC9mTqfzrC7jD_lYX2NIcC_Ja_NULPRQZrLLuUni_e74XwixmtPMG4lBcab2KUpEykVp5gDIhjLICInZhEQVfpKC5l0J9toZ02ukzOmQVf7TKI7zZTDl_A2FTvFSpI0rlbrJspE1f3_CLNN1tzCcMCPgi2BDyq8ly4TEAdhv6qXKlmIHbINgP9PIbz064x21MdG9jA5CiKzwQmx6goE-eJKOA"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded-full bg-black/85 text-white font-mono text-[9px] uppercase tracking-wide">인기 보양식</span>
+</div>
+<div class="p-3 flex flex-col">
+<span class="text-[13px] font-bold text-[#111111] truncate">영광 보리굴비 반상</span>
+<span class="font-mono text-[13px] text-[#111111] font-bold mt-1">32,000원 <span class="text-gray-400 font-normal text-[10px]">/ 1인</span></span>
+</div>
+</div></div>
+</div>
+<!-- Location Map Preview Block -->
+<div class="px-4 mt-5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between px-0.5">
+<h3 class="font-display text-[16px] text-[#111111] font-bold tracking-tight">위치 및 주차 안내</h3>
+<span class="font-mono text-[11px] text-[#111111] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[15px]">local_parking</span>
+        전용 주차 완비
+      </span>
+</div>
+<div class="w-full h-44 rounded-2xl shadow-sm bg-cover bg-center relative overflow-hidden flex items-end p-3" data-location="Seoul Seongsu-dong 2-ga 300" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBERgJAjeN8K2rBVofUJr05dK9nCvUbs_Rj3TYYoMWcoFrbDNF87JNb_VE3e6xcx-vrpyoeMoMQj-EQFhlEXcEwzZZqqVx1ZnbTxt7nkopWXTwyFsqVONPXlhUHbW498DgJUspM6cUJL7ys3KurJ1rpwyN9Rd-fYqJhHGUYCqld10TL1TUoUxUnG66Mw36UMcGgZDMf6z0_Zc2JCr2af7RkqmD1imCuNyjUWgyC8ztuyWjE38ZLPSPvBw')"><div class="w-full bg-white/95 backdrop-blur-md p-2.5 rounded-xl flex items-center justify-between shadow-xs"><div class="flex flex-col"><span class="text-[12px] text-[#111111] font-bold">서울 성동구 연무장길 42 2층</span><span class="text-[11px] text-gray-500">성수역 3번 출구 직진 후 카페거리 방면</span></div><a class="shrink-0 px-2.5 py-1.5 rounded-lg bg-[#F1EFEA] text-[#111111] font-mono text-[11px] flex items-center gap-1 active:bg-gray-200" href="https://map.kakao.com" target="_blank"><span class="">큰지도</span><span class="material-symbols-outlined text-[13px]">open_in_new</span></a></div></div>
+</div>
+<!-- Sticky Bottom Decision Toolbar (29CM Minimalist Monochrome Design) -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md shadow-md px-4 py-3 pb-safe flex flex-col gap-2"><div class="flex items-center gap-2"><a aria-label="식당 전화 문의" class="flex-1 h-11 rounded-xl bg-[#F3F2EE] text-[#111111] flex items-center justify-center gap-1.5 font-medium text-[13px] active:scale-98 transition-all" href="tel:02-468-1234"><span class="material-symbols-outlined text-[18px]">call</span><span>전화 문의</span></a><a aria-label="카카오맵 길찾기" class="flex-1 h-11 rounded-xl bg-[#F3F2EE] text-[#111111] flex items-center justify-center gap-1.5 font-medium text-[13px] active:scale-98 transition-all" href="https://map.kakao.com" target="_blank"><span class="material-symbols-outlined text-[18px]">explore</span><span>길찾기</span></a><a aria-label="카카오 상세 정보" class="w-11 h-11 rounded-xl bg-[#F3F2EE] text-[#111111] flex items-center justify-center active:scale-98 transition-all" href="https://place.map.kakao.com" target="_blank"><span class="material-symbols-outlined text-[18px]">open_in_new</span></a></div><button class="w-full h-12 rounded-2xl bg-[#111111] text-white flex items-center justify-center gap-2 font-display text-[14px] font-bold shadow-sm active:scale-98 transition-all tracking-wide" id="btn-confirm-place" onclick="handleDecisionConfirm(this)"><div class="flex items-center justify-center gap-2"><span class="material-symbols-outlined text-[18px]">stars</span><div class="flex flex-col items-start text-left leading-tight"><span class="text-[13px] font-bold">이 식당으로 결정하기</span><span class="text-[10px] text-gray-300 font-mono font-normal">모아의 추천 리포트 저장 및 길찾기</span></div></div></button></div>
+<!-- Interactive Feedback Toast (Delight micro-interaction) -->
+<div class="fixed top-16 inset-x-4 z-50 pointer-events-none transition-all duration-300 opacity-0 transform -translate-y-2 flex justify-center" id="toast-delight">
+<div class="px-4 py-2 rounded-full bg-[#111111] text-white text-[12px] font-mono shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-white">check_circle</span>
+<span class="" id="toast-message">저장되었습니다</span>
+</div>
+</div>
+</div>
+<script>
+  function toggleProvenance(btn) {
+    const parent = btn.closest('.bg-white');
+    const detail = parent.querySelector('.provenance-detail');
+    if (detail) {
+      detail.classList.toggle('hidden');
+    }
+  }
+
+  function toggleAllProvenance() {
+    const details = document.querySelectorAll('.provenance-detail');
+    const icon = document.getElementById('provenance-toggle-icon');
+    const isAnyHidden = Array.from(details).some(el => el.classList.contains('hidden'));
+    
+    details.forEach(el => {
+      if (isAnyHidden) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    if (icon) {
+      icon.textContent = isAnyHidden ? 'expand_less' : 'expand_more';
+    }
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast-delight');
+    const toastMsg = document.getElementById('toast-message');
+    if (!toast || !toastMsg) return;
+
+    toastMsg.textContent = message;
+    toast.classList.remove('opacity-0', '-translate-y-2');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', '-translate-y-2');
+    }, 2400);
+  }
+
+  function toggleBookmark(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    const isFilled = icon.style.fontVariationSettings.includes("'FILL' 1");
+    if (isFilled) {
+      icon.style.fontVariationSettings = "'FILL' 0";
+      showToast("북마크 목록에서 제외되었습니다");
+    } else {
+      icon.style.fontVariationSettings = "'FILL' 1";
+      showToast("소담 한정식이 위시리스트에 저장되었습니다 ✨");
+    }
+  }
+
+  function triggerShareToast() {
+    if (navigator.share) {
+      navigator.share({
+        title: '소담 한정식 성수본점',
+        text: '마티 추천: 부모님 모시고 가기 딱 좋은 정갈한 한정식집!',
+        url: window.location.href,
+      }).catch(() => {
+        showToast("링크가 클립보드에 복사되었습니다 📋");
+      });
+    } else {
+      showToast("링크가 클립보드에 복사되었습니다 📋");
+    }
+  }
+
+  function handleDecisionConfirm(btn) {
+    btn.classList.add('bg-gray-800');
+    btn.innerHTML = `
+      <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+      <span>결정 완료! 캘린더 등록됨</span>
+    `;
+    showToast("캘린더 일정과 가족 초대 링크가 생성되었습니다 🎉");
+  }
+</script></main>
+</body></html>

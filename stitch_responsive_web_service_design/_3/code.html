@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#F7F7F8;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-lowest": "#ffffff",
+        "secondary-container": "#f0f0f2",
+        "on-secondary-container": "#111111",
+        "primary": "#111111",
+        "surface-container-low": "#f7f7f8",
+        "surface-container": "#f0f0f2",
+        "surface-container-high": "#e8e8ea",
+        "surface-container-highest": "#e5e5e7",
+        "on-surface": "#111111",
+        "on-surface-variant": "#666668",
+        "outline": "#747878",
+        "outline-variant": "#e5e5e7",
+        "background": "#F7F7F8",
+        "surface": "#F7F7F8",
+        "on-primary": "#ffffff",
+        "secondary": "#333333"
+      },
+      fontFamily: {
+        "body-md": ["Plus Jakarta Sans", "sans-serif"],
+        "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+        "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+        "label-md": ["Plus Jakarta Sans", "sans-serif"],
+        "label-lg": ["Plus Jakarta Sans", "sans-serif"]
+      }
+    }
+  }
+}</script></head><body class="bg-[#F7F7F8] font-body-md text-[#111111] flex flex-col min-h-screen antialiased"><header class="fixed top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md pt-safe shadow-[0_2px_8px_rgba(0,0,0,0.02)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-2.5"><div class="w-9 h-9 rounded-full bg-[#F7F5F0] overflow-hidden flex items-center justify-center shrink-0"><img alt="모아(MOA) 캐릭터 로고" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx-gT1unc0BdrnwaFungkfp4gEkmtK5uJQPxZ2rDTSos6aMX3HBDMBG7M-8X8O-sPb7r_4UWJri_vZoaEkWJPyJVDhXeHc9NWpY4f-w7gRgRhMHvsOMj1X7ESRY1mnTggtnKfJrprfI3AxGQhNVSs11fKwyZmQT6KnAku3jzHiDdm4faVCN43W1TOd-Tch-2KMfIH4hkl25ZUuKBozZAehFFY8AwDMn3YO7hQK8xn-5gduInpe-Wj_JfGy"></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-black text-[18px] tracking-tight text-[#111111] uppercase font-['Plus_Jakarta_Sans']">MOA</span><span class="text-[10px] font-bold tracking-tight bg-[#FFECE8] text-[#111111] border border-[#111111]/10 px-1.5 py-0.5 rounded-[3px]">오늘의 식당 결정 AI</span></div><button class="flex items-center text-left text-[#666668] text-[12px] font-medium hover:text-[#111111] transition-colors"><span class="material-symbols-outlined text-[13px] mr-0.5">location_on</span><span class="">성수동 2가</span><span class="material-symbols-outlined text-[13px]">expand_more</span></button></div></div><div class="flex items-center gap-2"><button aria-label="Notifications" class="w-8 h-8 rounded-full border border-[#E5E5E7] bg-white flex items-center justify-center text-[#111111] hover:bg-[#F7F7F8]"><span class="material-symbols-outlined text-[18px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-[#111111] text-white flex items-center justify-center text-[13px] font-bold">MOA</div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-[#F7F7F8] min-h-screen"><div class="flex flex-col w-full px-4 space-y-4 pb-12 pt-3">
+<!-- AI Concierge Mascot & Welcome Speech Section -->
+<section class="relative"><div class="flex items-start gap-3.5 bg-white p-4 rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.02)]"><div class="relative shrink-0"><div class="w-14 h-14 rounded-full bg-[#F7F5F0] flex items-center justify-center overflow-hidden"><img alt="모아(MOA) 캐릭터 로고" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Wx-gT1unc0BdrnwaFungkfp4gEkmtK5uJQPxZ2rDTSos6aMX3HBDMBG7M-8X8O-sPb7r_4UWJri_vZoaEkWJPyJVDhXeHc9NWpY4f-w7gRgRhMHvsOMj1X7ESRY1mnTggtnKfJrprfI3AxGQhNVSs11fKwyZmQT6KnAku3jzHiDdm4faVCN43W1TOd-Tch-2KMfIH4hkl25ZUuKBozZAehFFY8AwDMn3YO7hQK8xn-5gduInpe-Wj_JfGy"></div><div class="absolute -bottom-0.5 -right-0.5 bg-[#FFECE8] text-[#111111] rounded-full w-4 h-4 flex items-center justify-center text-[10px]"></div></div><div class="flex-1"><div class="flex items-center gap-1.5 mb-1"><span class="text-[15px] font-bold text-[#111111]">모아 (MOA)</span><span class="text-[10px] bg-[#EBF2E8] text-[#111111] px-1.5 py-0.2 rounded font-semibold tracking-tight">AI 가이드</span></div><p class="text-[13px] text-[#444444] leading-[1.5] tracking-tight">오늘의 조건을 듣고, 가장 잘 맞는 곳을 골라주는 말랑한 길잡이에요. 오늘 누구와 어떤 시간을 보내시나요? 조건에 딱 맞는 <span class="font-bold text-[#111111] underline underline-offset-2">3곳</span>을 정갈하게 결정해 드릴게요.</p></div></div></section>
+<!-- Step 1: Companion Chips -->
+<section class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-[#111111] text-white text-[10px] font-bold flex items-center justify-center">1</span>
+<h2 class="text-[14px] font-bold text-[#111111] tracking-tight">누구와 식사하시나요?</h2>
+</div>
+<span class="text-[11px] text-[#888888] font-medium tracking-tight">단일 선택</span>
+</div>
+<!-- Scrollable companion selector buttons -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 pt-0.5 no-scrollbar -mx-4 px-4"><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#111111] text-white text-[13px] font-medium transition-transform active:scale-95" type="button"><span class="text-[14px]">👨‍👩‍👧</span><span class="font-semibold tracking-tight">부모님과</span><span class="material-symbols-outlined text-[14px]">check</span></button><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F7F8] text-[#333333] text-[13px] font-medium transition-all hover:bg-[#E5E5E7] active:scale-95" type="button"><span class="text-[14px]">💑</span><span class="font-normal tracking-tight">연인/데이트</span></button><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F7F8] text-[#333333] text-[13px] font-medium transition-all hover:bg-[#E5E5E7] active:scale-95" type="button"><span class="text-[14px]">🍕</span><span class="font-normal tracking-tight">친구들과</span></button><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F7F8] text-[#333333] text-[13px] font-medium transition-all hover:bg-[#E5E5E7] active:scale-95" type="button"><span class="text-[14px]">💼</span><span class="font-normal tracking-tight">직장동료</span></button><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F7F8] text-[#333333] text-[13px] font-medium transition-all hover:bg-[#E5E5E7] active:scale-95" type="button"><span class="text-[14px]">🍜</span><span class="font-normal tracking-tight">혼자</span></button><button class="shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#F7F7F8] text-[#333333] text-[13px] font-medium transition-all hover:bg-[#E5E5E7] active:scale-95" type="button"><span class="text-[14px]">👔</span><span class="font-normal tracking-tight">비즈니스</span></button></div>
+</section>
+<!-- Step 2: Essential Condition Controls -->
+<section class="flex flex-col space-y-2">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-[#111111] text-white text-[10px] font-bold flex items-center justify-center">2</span>
+<h2 class="text-[14px] font-bold text-[#111111] tracking-tight">인원 및 핵심 조건</h2>
+</div>
+<div class="bg-white rounded-xl p-4 space-y-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"><div class="grid grid-cols-3 gap-2"><div class="flex flex-col bg-[#F7F7F8] rounded-xl p-2.5 items-center justify-between"><span class="text-[11px] font-medium text-[#777777]">인원수</span><div class="flex items-center justify-between w-full mt-1"><button class="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#111111] active:scale-90" type="button"><span class="material-symbols-outlined text-[12px]">remove</span></button><span class="text-[14px] text-[#111111] font-bold tracking-tight">3명</span><button class="w-5 h-5 rounded-full bg-[#111111] text-white flex items-center justify-center active:scale-90" type="button"><span class="material-symbols-outlined text-[12px]">add</span></button></div></div><button class="flex flex-col bg-[#F7F7F8] rounded-xl p-2.5 text-left justify-between active:bg-[#EEEEF0] transition-colors" type="button"><span class="text-[11px] font-medium text-[#777777]">1인 예산</span><div class="flex items-center justify-between w-full mt-1"><span class="text-[13px] text-[#111111] font-bold truncate tracking-tight">3만원대</span><span class="material-symbols-outlined text-[14px] text-[#777777] shrink-0">expand_more</span></div></button><button class="flex flex-col bg-[#F7F7F8] rounded-xl p-2.5 text-left justify-between active:bg-[#EEEEF0] transition-colors" type="button"><span class="text-[11px] font-medium text-[#777777]">반경 거리</span><div class="flex items-center justify-between w-full mt-1"><span class="text-[13px] text-[#111111] font-bold truncate tracking-tight">성수 1.5km</span><span class="material-symbols-outlined text-[14px] text-[#111111] shrink-0">near_me</span></div></button></div><div class="pt-1"><div class="text-[#777777] text-[11px] font-medium mb-2 flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">filter_list</span><span class="">공간 선호 태그</span></div><div class="flex flex-wrap gap-1.5"><button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#111111] text-white text-[12px] font-medium" type="button"><span class="">주차 필수</span><span class="material-symbols-outlined text-[12px]">check</span></button><button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#F7F7F8] text-[#444444] text-[12px] font-medium hover:bg-[#E5E5E7]" type="button"><span class="">룸 선호</span></button><button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#111111] text-white text-[12px] font-medium" type="button"><span class="">조용한 분위기</span><span class="material-symbols-outlined text-[12px]">check</span></button><button class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#F7F7F8] text-[#444444] text-[12px] font-medium hover:bg-[#E5E5E7]" type="button"><span class="">예약 가능</span></button></div></div></div>
+</section>
+<!-- Step 3: Conversational Natural Language Input -->
+<section class="flex flex-col space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-4 h-4 rounded-full bg-[#111111] text-white text-[10px] font-bold flex items-center justify-center">3</span>
+<h2 class="text-[14px] font-bold text-[#111111] tracking-tight">모아에게 편하게 말해주세요</h2>
+</div>
+<span class="text-[11px] text-[#666668] font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">edit_note</span>
+        자유 입력
+      </span>
+</div>
+<!-- Textarea Card Container -->
+<div class="bg-white rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col space-y-2.5"><div class="relative"><textarea class="w-full bg-[#FDFBF7] rounded-xl p-3 text-[#111111] text-[13px] focus:outline-none focus:bg-white resize-none leading-relaxed transition-all placeholder:text-[#999999]" id="promptInput" placeholder="예: 부모님 모시고 가는데 주차 편하고 너무 맵지 않은 정갈한 한식당 찾아줘." rows="3">부모님 모시고 갈 거야. 차 가져가고 너무 시끄럽지 않고 맵지 않은 메뉴가 많았으면 좋겠어.</textarea><button class="absolute right-2 bottom-3 w-7 h-7 rounded-full bg-[#111111] text-white flex items-center justify-center active:scale-90 transition-transform" type="button"><span class="material-symbols-outlined text-[15px]">mic</span></button></div><div class="flex flex-col space-y-1.5"><span class="text-[11px] text-[#888888] font-medium flex items-center gap-1"><span class="material-symbols-outlined text-[12px]">add_circle_outline</span>빠른 조건 추가</span><div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5"><button class="shrink-0 px-2.5 py-1 rounded-lg bg-[#EBF2E8] text-[#111111] text-[11px] font-medium hover:bg-[#E5E5E7] active:scale-95 transition-all" type="button">+ 주차 편한 곳</button><button class="shrink-0 px-2.5 py-1 rounded-lg bg-[#EBF2E8] text-[#111111] text-[11px] font-medium hover:bg-[#E5E5E7] active:scale-95 transition-all" type="button">+ 대화하기 편한 곳</button><button class="shrink-0 px-2.5 py-1 rounded-lg bg-[#EBF2E8] text-[#111111] text-[11px] font-medium hover:bg-[#E5E5E7] active:scale-95 transition-all" type="button">+ 정갈한 한식</button><button class="shrink-0 px-2.5 py-1 rounded-lg bg-[#EBF2E8] text-[#111111] text-[11px] font-medium hover:bg-[#E5E5E7] active:scale-95 transition-all" type="button">+ 와인 콜키지 프리</button></div></div></div>
+</section>
+<!-- Live Reasoning Preview Card (Decision Engine Preview) -->
+<section class="bg-white rounded-xl p-4 shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col space-y-2.5"><div class="flex items-center justify-between"><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#111111] text-[16px]">data_exploration</span><span class="text-[13px] font-bold text-[#111111]">모아가 이렇게 이해했어요</span></div><span class="text-[10px] font-mono uppercase tracking-wider bg-[#EBF2E8] text-[#111111] px-1.5 py-0.5 rounded font-bold">ANALYZED</span></div><div class="grid grid-cols-3 gap-2 pt-0.5"><div class="flex flex-col bg-[#FDFBF7] rounded-xl p-2.5"><span class="text-[10px] font-black tracking-wider text-[#111111] flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">check_circle</span>MUST</span><span class="text-[12px] text-[#111111] mt-1 font-bold truncate">주차 가능 여부</span><span class="text-[11px] text-[#777777] mt-0.5">3인 부모님 동행</span></div><div class="flex flex-col bg-[#EBF2E8] rounded-xl p-2.5"><span class="text-[10px] font-black tracking-wider text-[#111111] flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">thumb_up</span>PREFER</span><span class="text-[12px] text-[#111111] mt-1 font-bold truncate">담백 &amp; 덜 매운 맛</span><span class="text-[11px] text-[#777777] mt-0.5">조용한 홀 &amp; 룸</span></div><div class="flex flex-col bg-[#FFECE8] rounded-xl p-2.5"><span class="text-[10px] font-black tracking-wider text-[#111111] flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">do_not_disturb_on</span>AVOID</span><span class="text-[12px] text-[#111111] mt-1 font-bold truncate">자극적인 매운맛</span><span class="text-[11px] text-[#777777] mt-0.5">시끄러운 펍/포차</span></div></div></section>
+<!-- Sticky Bottom CTA Section -->
+<div class="pt-2 sticky bottom-20 z-40">
+<div class="bg-[#F7F7F8]/80 backdrop-blur-md p-1">
+<button class="w-full bg-[#111111] text-white py-3.5 px-5 rounded-xl shadow-[0_4px_16px_rgba(0,0,0,0.15)] flex flex-col items-center justify-center transition-transform active:scale-[0.99] hover:bg-[#222222]" type="button"><div class="flex items-center gap-1.5"><span class="text-[15px] font-bold tracking-tight">모아에게 최적 3곳 결정 요청하기</span><span class="material-symbols-outlined text-[18px]">arrow_forward</span></div><span class="text-[11px] text-[#A0A0A0] mt-0.5 font-normal">입력한 조건을 바탕으로 오늘 가장 잘 맞는 3곳 엄선</span></button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const textarea = document.getElementById('promptInput');
+    
+    // Companion chip active toggle effect
+    const companionChips = document.querySelectorAll('section:nth-of-type(2) button');
+    companionChips.forEach(button => {
+      button.addEventListener('click', () => {
+        companionChips.forEach(b => {
+          b.className = 'shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white text-[#333333] text-[13px] font-medium border border-[#E5E5E7] transition-all hover:border-[#111111] active:scale-95';
+          const icon = b.querySelector('.material-symbols-outlined');
+          if (icon) icon.remove();
+        });
+        button.className = 'shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#111111] text-white text-[13px] font-medium border border-[#111111] transition-transform active:scale-95';
+        const span = document.createElement('span');
+        span.className = 'material-symbols-outlined text-[14px]';
+        span.textContent = 'check';
+        button.appendChild(span);
+      });
+    });
+
+    // Simple interaction for magic prompt buttons
+    const tagButtons = document.querySelectorAll('button');
+    tagButtons.forEach(btn => {
+      if (btn.innerText.startsWith('+')) {
+        btn.addEventListener('click', (e) => {
+          const textToAdd = e.currentTarget.innerText.replace('+', '').trim();
+          if (textarea) {
+            textarea.value = textarea.value + ' ' + textToAdd;
+            textarea.focus();
+          }
+        });
+      }
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-white/95 backdrop-blur-md shadow-[0_-2px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-[#111111] font-bold"><div class="flex justify-around items-center h-16 px-4"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] transition-colors text-[#111111] font-bold" data-path="today-decision" href="#"><span class="material-symbols-outlined text-[22px]">edit_calendar</span><span class="text-[11px] tracking-tight">오늘 결정</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-[#888888] hover:text-[#111111] transition-colors" data-path="saved-picks" href="#"><span class="material-symbols-outlined text-[22px]">bookmark_border</span><span class="text-[11px] tracking-tight">보관함</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-[#888888] hover:text-[#111111] transition-colors" data-path="dining-dna" href="#"><span class="material-symbols-outlined text-[22px]">restaurant</span><span class="text-[11px] tracking-tight">취향/기록</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[56px] min-h-[44px] text-[#888888] hover:text-[#111111] transition-colors" data-path="settings-help" href="#"><span class="material-symbols-outlined text-[22px]">tune</span><span class="text-[11px] tracking-tight">설정</span></a></div></nav>
+
+
+</body></html>

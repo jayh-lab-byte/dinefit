@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+@layer base {
+  html, body { width: 100vw; margin: 0; padding: 0; }
+  body { overscroll-behavior: none; background-color: #f9f9f9; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+  main > :first-child { margin-top: 0 !important; }
+  main > :last-child { margin-bottom: 0 !important; }
+}
+::-webkit-scrollbar { display: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-dim": "#dadada",
+          "secondary-container": "#f4f4f5",
+          "tertiary-container": "#18181b",
+          "on-primary-fixed": "#111111",
+          "primary-fixed": "#e4e4e7",
+          "on-secondary": "#ffffff",
+          "on-tertiary-container": "#a1a1aa",
+          "on-primary-container": "#71717a",
+          "tertiary-fixed": "#e4e4e7",
+          "surface-container-low": "#f4f4f5",
+          "secondary-fixed": "#e4e4e7",
+          "surface-container-high": "#e4e4e7",
+          "primary-fixed-dim": "#d4d4d8",
+          "primary-container": "#18181b",
+          "error-container": "#fee2e2",
+          "on-surface-variant": "#52525b",
+          "on-primary-fixed-variant": "#3f3f46",
+          "outline-variant": "#e4e4e7",
+          "on-tertiary-fixed": "#18181b",
+          "inverse-surface": "#18181b",
+          "surface-container-highest": "#d4d4d8",
+          "surface-container": "#f4f4f5",
+          "primary": "#111111",
+          "background": "#f9f9f9",
+          "on-tertiary": "#ffffff",
+          "on-secondary-container": "#27272a",
+          "secondary-fixed-dim": "#d4d4d8",
+          "tertiary": "#18181b",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-fixed": "#18181b",
+          "on-surface": "#111111",
+          "surface-tint": "#27272a",
+          "tertiary-fixed-dim": "#d4d4d8",
+          "on-tertiary-fixed-variant": "#3f3f46",
+          "secondary": "#71717a",
+          "on-background": "#111111",
+          "outline": "#a1a1aa",
+          "on-error": "#ffffff",
+          "error": "#b91c1c",
+          "on-error-container": "#7f1d1d",
+          "on-secondary-fixed-variant": "#3f3f46",
+          "surface": "#f9f9f9",
+          "surface-bright": "#ffffff",
+          "inverse-primary": "#d4d4d8",
+          "surface-variant": "#f4f4f5",
+          "on-primary": "#ffffff",
+          "inverse-on-surface": "#f4f4f5"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "space-xl": "2.5rem",
+          "gutter-desktop": "1.5rem",
+          "gutter": "1rem",
+          "space-xs": "0.25rem",
+          "space-sm": "0.5rem",
+          "margin-desktop": "3rem",
+          "space-2xl": "4rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "margin": "1.25rem"
+        },
+        fontFamily: {
+          "body-md": ["Hanken Grotesk", "sans-serif"],
+          "headline-xl": ["Space Grotesk", "sans-serif"],
+          "headline-xl-mobile": ["Space Grotesk", "sans-serif"],
+          "label-mono": ["JetBrains Mono", "monospace"],
+          "body-lg": ["Hanken Grotesk", "sans-serif"],
+          "label-caps": ["Space Grotesk", "sans-serif"],
+          "headline-lg": ["Space Grotesk", "sans-serif"],
+          "headline-md": ["Space Grotesk", "sans-serif"],
+          "body-sm": ["Hanken Grotesk", "sans-serif"],
+          "display-hero-mobile": ["Space Grotesk", "sans-serif"],
+          "display-hero": ["Space Grotesk", "sans-serif"]
+        }
+      }
+    }
+  }
+</script></head>
+<body class="bg-[#f9f9f9] font-body-md text-[#111111] flex flex-col min-h-screen antialiased selection:bg-black selection:text-white">
+<!-- Minimal 29CM Style Top Header -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#ffffff]/90 backdrop-blur-md pt-safe">
+<div class="h-14 px-4 flex items-center justify-between">
+<div class="flex items-center gap-2"><button class="w-9 h-9 -ml-1 flex items-center justify-center text-[#111111] rounded-full active:bg-[#f4f4f5] transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[20px]">arrow_back</span></button><img alt="모아(MOA) 캐릭터 로고" class="w-7 h-7 rounded-full border border-[#e4e4e7] object-cover bg-white" src="https://lh3.googleusercontent.com/aida/AEtjO1WC8V1w1ccqaErt-kwgMGBqrF-STcPToPrgyTzFdzA2abOd9nDGBOvYJ_Wn_P_A7YjpO1tQn2qPvntg3t513Kfm6P4aqFgIBkVrH3Yt5wh2BaI9xpq5Y6tOZpT-IXRsqxXiadV-eX2krv_LfZsXeoAGw_vr4XVZdk-zqPNrWoGM84KKMvXM9M516twsPCQFtyVWi2gXxCqroDoss6-aYHy6IER6AZExsGj9jg2oFor1fCei4Y_mHeJAUvhd"/><h1 class="font-['Space_Grotesk'] text-[15px] font-semibold tracking-tight text-[#111111] uppercase">MOA DECISION MAP</h1></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full border border-[#111111] flex items-center justify-center text-[#111111]">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full pt-14 pb-safe bg-[#f9f9f9] min-h-screen">
+<div class="flex flex-col w-full pb-36">
+<!-- Minimalist Monochrome Map View Section -->
+<section class="relative w-full px-4 pt-3">
+<div class="relative w-full h-60 rounded-xl overflow-hidden border border-[#e4e4e7] bg-[#f4f4f5]">
+<div class="w-full h-full bg-cover bg-center filter grayscale contrast-[1.08] opacity-85" data-location="Seongsu-dong, Seoul, South Korea" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfDjOJO3PrVxRozfoyvzHBFbtODl0QVn6qKWu3njJpoWNBgK6SPYnPqnkEfE4pcJrNAMWkTbbeptyPlkjYnMQX0BWR-BVlvNOF-8kxBr3tb7NeprvIUcpzabhVi11fONT_o1r-zN_UO2BbZ7Sw_IaNMSPYobg_qyI_O8WSdC2ysrMSOpdgS0OThdoPnqqKTVaHM7apKKboImbINHSn5-uHb95fE0gefiA1uM0Yy1vdo13pFY8uoQ4V1g');"></div>
+<!-- Monochromatic map overlay -->
+<div class="absolute inset-0 bg-[#ffffff]/10 pointer-events-none"></div>
+<!-- Clean Radius Ring -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-48 h-48 rounded-full border border-dashed border-[#111111]/30 bg-black/[0.02] flex items-start justify-center pt-2">
+<span class="px-2 py-0.5 rounded-full bg-[#111111] text-white text-[10px] font-['Space_Grotesk'] tracking-wider">
+                RADIUS 1.5KM
+              </span>
+</div>
+</div>
+<!-- Pin 1: BEST FIT (Pure Solid Black Pin) -->
+<button class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-[#111111] text-white px-2.5 py-1 rounded-full shadow-md active:scale-95 transition-transform" onclick="scrollToCard('card-best-fit')">
+<span class="w-4 h-4 rounded-full bg-white text-[#111111] flex items-center justify-center text-[10px] font-bold font-['Space_Grotesk']">1</span>
+<span class="text-[11px] font-medium tracking-tight pr-0.5">소담 한정식</span>
+</button>
+<!-- Pin 2: SAFE PICK (Dark Charcoal Pin) -->
+<button class="absolute top-1/3 right-1/4 -translate-x-1/2 -translate-y-1/2 flex items-center gap-1.5 bg-[#27272a] text-white px-2.5 py-1 rounded-full shadow-md active:scale-95 transition-transform" onclick="scrollToCard('card-safe-pick')">
+<span class="w-4 h-4 rounded-full bg-[#e4e4e7] text-[#111111] flex items-center justify-center text-[10px] font-bold font-['Space_Grotesk']">2</span>
+<span class="text-[11px] font-medium tracking-tight pr-0.5">성수 온온가</span>
+</button>
+<!-- Pin 3: WILD CARD (White Minimal Border Pin) -->
+<button class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-white text-[#111111] border border-[#111111] px-2.5 py-1 rounded-full shadow-sm active:scale-95 transition-transform" onclick="scrollToCard('card-wild-card')">
+<span class="w-4 h-4 rounded-full bg-[#111111] text-white flex items-center justify-center text-[10px] font-bold font-['Space_Grotesk']">3</span>
+<span class="text-[11px] font-medium tracking-tight pr-0.5">기와담</span>
+</button>
+<!-- Map Badge Top Left -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-sm text-[#111111] text-[11px] font-medium border border-[#e4e4e7] flex items-center gap-1 tracking-tight">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+              성수역 중심
+            </span>
+</div>
+<!-- Map Action Top Right -->
+<div class="absolute top-3 right-3">
+<button class="w-7 h-7 rounded-md bg-white/95 backdrop-blur-sm flex items-center justify-center text-[#111111] border border-[#e4e4e7] active:bg-[#f4f4f5]">
+<span class="material-symbols-outlined text-[16px]">layers</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Chiikawa Mascot Speech Bubble Section -->
+<section class="px-4 mt-3"><div class="flex items-center gap-3 bg-white rounded-xl p-3 border border-[#e4e4e7]"><div class="relative shrink-0"><img alt="모아(MOA) 캐릭터 로고" class="w-11 h-11 rounded-full object-cover border border-[#111111] bg-white" src="https://lh3.googleusercontent.com/aida/AEtjO1WC8V1w1ccqaErt-kwgMGBqrF-STcPToPrgyTzFdzA2abOd9nDGBOvYJ_Wn_P_A7YjpO1tQn2qPvntg3t513Kfm6P4aqFgIBkVrH3Yt5wh2BaI9xpq5Y6tOZpT-IXRsqxXiadV-eX2krv_LfZsXeoAGw_vr4XVZdk-zqPNrWoGM84KKMvXM9M516twsPCQFtyVWi2gXxCqroDoss6-aYHy6IER6AZExsGj9jg2oFor1fCei4Y_mHeJAUvhd"/></div><div class="flex-1 min-w-0"><div class="flex items-center gap-1.5 mb-0.5"><span class="text-[11px] font-semibold text-[#111111] font-['Space_Grotesk'] uppercase tracking-wider">MOA CURATION</span><span class="text-[10px] text-[#a1a1aa] font-mono">/ SEONGSU</span></div><p class="text-[13px] text-[#111111] font-medium leading-snug tracking-tight">“성수동 42개 한식당 중 오늘 <strong class="font-bold underline decoration-1 underline-offset-2">부모님 식사에 가장 잘 맞는 3곳</strong>으로 골랐어요.”</p></div></div></section>
+<!-- 3 Editorial Style Recommendation Cards -->
+<section class="px-4 mt-3 flex flex-col gap-4">
+<!-- CARD 1: BEST FIT -->
+<article class="bg-white rounded-xl overflow-hidden flex flex-col transition-all duration-300 shadow-sm" id="card-best-fit"><!-- Editorial Header -->
+<div class="px-4 pt-3.5 pb-2.5 flex items-center justify-between bg-[#f4f4f5]/40"><div class="flex items-center gap-2"><span class="px-2 py-0.5 bg-[#111111] text-white text-[10px] font-['Space_Grotesk'] font-bold tracking-widest rounded">01 BEST FIT</span><span class="text-[12px] font-semibold font-mono text-[#111111]">94% MATCH</span></div><span class="px-2.5 py-0.5 rounded-full text-[10px] font-semibold font-mono bg-[#FF7E67]/15 text-[#111111]">모아의 오늘의 Pick</span></div>
+<!-- Editorial Photography -->
+<div class="relative px-4 pt-3">
+<div class="w-full h-44 rounded-lg overflow-hidden relative bg-[#f4f4f5]">
+<img class="w-full h-full object-cover grayscale-[15%] contrast-[1.05]" data-alt="소담 한정식 코스 요리" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIB1-3NoveITK3cV4xolMnLNMOStRl9E2eqYeaW2W_kz4TmUQMqBE31kAFb8_mTgTS7ML-f85iO9hiB4AgndWVYyJiogfwbxB2hCBAjPuWqR-H83OZifgsKl4hJalPU4J8gMvwwNm547DCGns-sS-lmImcxs0-Rz19fBSnWxkzx-2R8a22zXPhyy33USUYQEM7oR4ZSrkfUaEuG5t2xvDsJn2vcNiEDfXBn__SdW4RzvKzhqWY7GBVbA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-end justify-between text-white">
+<div>
+<h2 class="font-['Space_Grotesk'] text-[17px] font-bold text-white tracking-tight leading-tight">소담 한정식 성수본점</h2>
+<p class="text-[11px] text-white/80 flex items-center gap-1 mt-0.5 font-light">
+<span class="material-symbols-outlined text-[13px]">near_me</span>
+                    성수역 3번출구 도보 5분 (420m)
+                  </p>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded bg-black/60 backdrop-blur-sm text-white text-[12px] font-mono font-medium">
+                    1인 28,000원~
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Body Content -->
+<div class="p-4 flex flex-col gap-3">
+<!-- Minimal Soft Fill Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">한정식 코스</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#111111] text-white font-medium">가족 모임 특화</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">순한맛 위주</span>
+</div>
+<!-- Role Analysis -->
+<p class="text-[12px] text-[#52525b] leading-relaxed">
+<strong class="text-[#111111] font-semibold">역할 분석:</strong> 요청하신 핵심 기준(가족 친화, 넉넉한 주차, 차분한 정숙함, 자극 없는 순한맛)을 군더더기 없이 가장 균형 있게 충족합니다.
+            </p>
+<!-- Mati Rationale Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-3 flex flex-col gap-1"><div class="flex items-center gap-1 text-[#111111] text-[11px] font-['Space_Grotesk'] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">comment</span>모아의 추천 이유 (MOA'S PICK)</div><p class="text-[12px] text-[#27272a] leading-relaxed">“전용 주차장(무료 2시간) 완비. 자극적이지 않고 정갈한 보리굴비와 떡갈비 정식으로 부모님 동반 시 실패가 없는 검증된 공간입니다.”</p></div>
+<!-- Trade-off Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-2.5 flex items-start gap-2">
+<span class="material-symbols-outlined text-[#71717a] text-[16px] shrink-0 mt-0.5">info</span>
+<div class="flex-1">
+<span class="text-[11px] font-semibold text-[#111111] block">아쉬운 점 (Trade-off)</span>
+<p class="text-[11px] text-[#71717a] leading-tight mt-0.5">
+                  주말 피크 타임에는 사전 예약이 없을 경우 10~15분 내외 현장 대기가 발생할 수 있습니다.
+                </p>
+</div>
+</div>
+<!-- Soft Fill Badges (Border-free) -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#A3B18A]/15 text-[#111111] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[11px]">check</span> 주차: CONFIRMED
+              </span>
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#f4f4f5] text-[#52525b] flex items-center gap-1">
+                조용함: LIKELY
+              </span>
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#f4f4f5] text-[#71717a] flex items-center gap-1">
+                부모님 적합도: INFERRED
+              </span>
+</div>
+<!-- Crisp Minimal Line-Free Action Buttons -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">insights</span>
+<span class="text-[10px] mt-0.5 font-medium">상세 분석</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">turn_sharp_right</span>
+<span class="text-[10px] mt-0.5 font-medium">길찾기</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">call</span>
+<span class="text-[10px] mt-0.5 font-medium">전화예약</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#111111] text-white active:bg-black transition-colors">
+<span class="material-symbols-outlined text-[17px]">bookmark</span>
+<span class="text-[10px] mt-0.5 font-medium">저장하기</span>
+</button>
+</div>
+</div></article>
+<!-- CARD 2: SAFE PICK -->
+<article class="bg-white rounded-xl overflow-hidden flex flex-col transition-all duration-300 shadow-sm" id="card-safe-pick"><!-- Editorial Header -->
+<div class="px-4 pt-3.5 pb-2.5 flex items-center justify-between bg-[#f4f4f5]/40"><div class="flex items-center gap-2"><span class="px-2 py-0.5 bg-[#27272a] text-white text-[10px] font-['Space_Grotesk'] font-bold tracking-widest rounded">02 SAFE PICK</span><span class="text-[12px] font-semibold font-mono text-[#111111]">89% MATCH</span></div><span class="text-[11px] text-[#71717a] font-mono">실패 확률 1% 미만</span></div>
+<!-- Photography -->
+<div class="relative px-4 pt-3">
+<div class="w-full h-40 rounded-lg overflow-hidden relative bg-[#f4f4f5]">
+<img class="w-full h-full object-cover grayscale-[15%] contrast-[1.05]" data-alt="성수 온온가 프라이빗 룸" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAirsNQ2rezhHwiIQszPGB9gOJ7bi0NzCJL7mMO68jNMg188MBOW4Cwhgc6aoRTMQeDlzeMdA1Lh2cAyCiWbVJ_sLeRA2kkbwnmQc4rUjR6boW-XNIu4BlfBqap_xfQToL2ERfQieH7gOMfrn6RI0ONHtU3mpCI-acweCvfvpF36qamUkJV8mIdfuKIQ-fw3C5pd5tqQA7H43Td671fB4CjbgWLNNBYyq52RIlPG-BXm7Tqt68vx705jA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-end justify-between text-white">
+<div>
+<h2 class="font-['Space_Grotesk'] text-[17px] font-bold text-white tracking-tight leading-tight">성수 온온가 (溫溫家)</h2>
+<p class="text-[11px] text-white/80 flex items-center gap-1 mt-0.5 font-light">
+<span class="material-symbols-outlined text-[13px]">near_me</span>
+                    카페거리 인근 (650m) · 발렛 파킹
+                  </p>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded bg-black/60 backdrop-blur-sm text-white text-[12px] font-mono font-medium">
+                    1인 35,000원~
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Body Content -->
+<div class="p-4 flex flex-col gap-3">
+<!-- Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">한식 파인다이닝</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#27272a] text-white font-medium">독립 프라이빗 룸</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">발렛 부스 완비</span>
+</div>
+<!-- Role Analysis -->
+<p class="text-[12px] text-[#52525b] leading-relaxed">
+<strong class="text-[#111111] font-semibold">역할 분석:</strong> 객관적인 정숙성 지표와 정갈한 개별 룸 구비로 격식 있는 가족 식사에 확실한 안정감을 제공합니다.
+            </p>
+<!-- Mati Rationale Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-3 flex flex-col gap-1"><div class="flex items-center gap-1 text-[#111111] text-[11px] font-['Space_Grotesk'] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">comment</span>모아의 추천 이유</div><p class="text-[12px] text-[#27272a] leading-relaxed">“독립된 개별 룸 구비 확인 완료. 테이블 간격이 넓고 조용한 분위기라 깊은 대화를 나누기에 최적의 선택지입니다.”</p></div>
+<!-- Trade-off Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-2.5 flex items-start gap-2">
+<span class="material-symbols-outlined text-[#71717a] text-[16px] shrink-0 mt-0.5">info</span>
+<div class="flex-1">
+<span class="text-[11px] font-semibold text-[#111111] block">아쉬운 점 (Trade-off)</span>
+<p class="text-[11px] text-[#71717a] leading-tight mt-0.5">
+                  1인 35,000원 선으로 초기 설정 예산 범위보다 약간 높은 가격대입니다.
+                </p>
+</div>
+</div>
+<!-- Soft Fill Badges (Border-free) -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#A3B18A]/15 text-[#111111] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[11px]">check</span> 룸 구비: CONFIRMED
+              </span>
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#A3B18A]/15 text-[#111111] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[11px]">check</span> 주차(발렛): CONFIRMED
+              </span>
+</div>
+<!-- Line Action Buttons -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">insights</span>
+<span class="text-[10px] mt-0.5 font-medium">상세 분석</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">turn_sharp_right</span>
+<span class="text-[10px] mt-0.5 font-medium">길찾기</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">call</span>
+<span class="text-[10px] mt-0.5 font-medium">전화예약</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#111111] text-white active:bg-black transition-colors">
+<span class="material-symbols-outlined text-[17px]">bookmark</span>
+<span class="text-[10px] mt-0.5 font-medium">저장하기</span>
+</button>
+</div>
+</div></article>
+<!-- CARD 3: WILD CARD -->
+<article class="bg-white rounded-xl overflow-hidden flex flex-col transition-all duration-300 shadow-sm" id="card-wild-card"><!-- Editorial Header -->
+<div class="px-4 pt-3.5 pb-2.5 flex items-center justify-between bg-[#f4f4f5]/40"><div class="flex items-center gap-2"><span class="px-2 py-0.5 bg-[#111111] text-white text-[10px] font-['Space_Grotesk'] font-bold tracking-widest rounded">03 WILD CARD</span><span class="text-[12px] font-semibold font-mono text-[#111111]">85% MATCH</span></div><span class="text-[11px] text-[#71717a] font-mono">특별한 분위기 반전</span></div>
+<!-- Photography -->
+<div class="relative px-4 pt-3">
+<div class="w-full h-40 rounded-lg overflow-hidden relative bg-[#f4f4f5]">
+<img class="w-full h-full object-cover grayscale-[15%] contrast-[1.05]" data-alt="기와담 모던한식 테라스 정원" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxKXZVqGehJ0cbut9KEM21Su0cse2cLhnljPOqL6md10MtMwRqNS93AbeHafTYjOOwcDVkpwZT0JiGMAuZjuSUaozqo2jWUDJT4jeUJHNeU8841KfNvvjouCyjCZE2fZHRvvhn7RjG4FMWp2ogdfkkSD3gw82Uo5TLGjTvPbWg2uKnvZ-70DEDeHMQrDrww7waVIC24dTB0iQ5VBCH7t9jqtFmBJ_hS10l8diPFgKH3tUABZmj82lAAA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-end justify-between text-white">
+<div>
+<h2 class="font-['Space_Grotesk'] text-[17px] font-bold text-white tracking-tight leading-tight">기와담 모던한식</h2>
+<p class="text-[11px] text-white/80 flex items-center gap-1 mt-0.5 font-light">
+<span class="material-symbols-outlined text-[13px]">near_me</span>
+                    성수동 뚝섬 방면 도보 7분 (510m)
+                  </p>
+</div>
+<div class="text-right">
+<span class="px-2 py-1 rounded bg-black/60 backdrop-blur-sm text-white text-[12px] font-mono font-medium">
+                    1인 31,000원
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Body Content -->
+<div class="p-4 flex flex-col gap-3">
+<!-- Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">모던 코스 한식</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">고즈넉한 정원 뷰</span>
+<span class="px-2.5 py-1 rounded text-[11px] bg-[#f4f4f5] text-[#27272a] font-medium">한옥 테라스</span>
+</div>
+<!-- Role Analysis -->
+<p class="text-[12px] text-[#52525b] leading-relaxed">
+<strong class="text-[#111111] font-semibold">역할 분석:</strong> 정형화된 식당 대신 감각적인 중정 정원과 모던 한식 코스로 색다른 가족 식사 경험을 제안합니다.
+            </p>
+<!-- Mati Rationale Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-3 flex flex-col gap-1"><div class="flex items-center gap-1 text-[#111111] text-[11px] font-['Space_Grotesk'] font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-[14px]">comment</span>모아의 추천 이유</div><p class="text-[12px] text-[#27272a] leading-relaxed">“도심 속 감각적인 한옥 테라스 뷰를 갖춰, 부모님께 평소와 다른 특별하고 감성적인 저녁 추억을 선사합니다.”</p></div>
+<!-- Trade-off Box -->
+<div class="bg-[#f4f4f5] rounded-lg p-2.5 flex items-start gap-2">
+<span class="material-symbols-outlined text-[#71717a] text-[16px] shrink-0 mt-0.5">info</span>
+<div class="flex-1">
+<span class="text-[11px] font-semibold text-[#111111] block">아쉬운 점 (Trade-off)</span>
+<p class="text-[11px] text-[#71717a] leading-tight mt-0.5">
+                  자체 전용 주차장이 없어 도보 2분 거리의 '성수공영주차장'을 이용하셔야 합니다.
+                </p>
+</div>
+</div>
+<!-- Soft Fill Badges (Border-free) -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#A3B18A]/15 text-[#111111] font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[11px]">check</span> 정원 뷰: CONFIRMED
+              </span>
+<span class="px-2.5 py-1 rounded text-[10px] font-mono bg-[#f4f4f5] text-[#52525b] flex items-center gap-1">
+                주차: 공영 연계 (도보 2분)
+              </span>
+</div>
+<!-- Line Action Buttons -->
+<div class="grid grid-cols-4 gap-2 pt-1">
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">insights</span>
+<span class="text-[10px] mt-0.5 font-medium">상세 분석</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">turn_sharp_right</span>
+<span class="text-[10px] mt-0.5 font-medium">길찾기</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#f4f4f5] text-[#111111] active:bg-[#e4e4e7] transition-colors">
+<span class="material-symbols-outlined text-[17px]">call</span>
+<span class="text-[10px] mt-0.5 font-medium">전화예약</span>
+</button>
+<button class="flex flex-col items-center justify-center py-2.5 rounded bg-[#111111] text-white active:bg-black transition-colors">
+<span class="material-symbols-outlined text-[17px]">bookmark</span>
+<span class="text-[10px] mt-0.5 font-medium">저장하기</span>
+</button>
+</div>
+</div></article>
+</section>
+<!-- Minimal 29CM Floating Bottom Refinement Bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl p-3 flex flex-col gap-2.5 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.04)]"><!-- Soft Fill Filter Pills (No Outlines) -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<button class="px-3 py-1.5 rounded-full bg-[#A3B18A]/15 text-[#111111] text-[11px] font-semibold shrink-0 flex items-center gap-1 active:scale-95 transition-transform">
+<span>💡 조건 하나만 바꿔볼까요?</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-[#f4f4f5] text-[#111111] text-[11px] font-medium shrink-0 flex items-center gap-1 active:bg-[#e4e4e7] transition-colors">
+<span>더 가까운 곳</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-[#f4f4f5] text-[#52525b] text-[11px] font-medium shrink-0 flex items-center gap-1 active:bg-[#e4e4e7] transition-colors">
+<span>더 저렴하게</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-[#f4f4f5] text-[#52525b] text-[11px] font-medium shrink-0 flex items-center gap-1 active:bg-[#e4e4e7] transition-colors">
+<span>더 조용하게</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-[#f4f4f5] text-[#52525b] text-[11px] font-medium shrink-0 flex items-center gap-1 active:bg-[#e4e4e7] transition-colors">
+<span>룸 예약 가능</span>
+</button>
+</div>
+<!-- Soft Fill Input Bar (No Border) -->
+<div class="flex items-center gap-2 bg-[#f4f4f5] rounded-full px-3.5 py-2">
+<span class="material-symbols-outlined text-[#71717a] text-[18px]">search</span>
+<input class="flex-1 bg-transparent text-[13px] text-[#111111] placeholder:text-[#a1a1aa] focus:outline-none" placeholder="모아에게 조건 바꿔 재추천 요청하기..." type="text"/>
+<button class="w-7 h-7 rounded-full bg-[#111111] text-white flex items-center justify-center shrink-0 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[15px]">arrow_upward</span>
+</button>
+</div></div>
+</div>
+</main>
+<script>
+    function scrollToCard(cardId) {
+      const el = document.getElementById(cardId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('ring-2', 'ring-black');
+        setTimeout(() => el.classList.remove('ring-2', 'ring-black'), 600);
+      }
+    }
+  </script>
+</body></html>
